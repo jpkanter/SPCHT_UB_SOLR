@@ -3,13 +3,13 @@
    "id_field":"id",
    "id_fallback":{
       "source":"marc",
-      "field":"001"
+      "field":"001:none"
    },
    "nodes":[
       {
          "name":"Hauptsachtitel",
          "source":"dict",
-         "graph":"http://purl.org/dc/terms/title",
+         "predicate":"http://purl.org/dc/terms/title",
          "field":"title",
          "alternatives":[
             "title_short"
@@ -27,7 +27,7 @@
       {
             "name": "Type, Dokument Art",
             "source": "dict",
-            "graph": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
+            "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
             "field": "format_finc",
             "required": "optional",
             "type": "triple",
@@ -39,7 +39,7 @@
       {
          "name":"Angabe zu unselbständigen Teilen",
          "source":"dict",
-         "graph":"http://rdaregistry.info/Elements/u/P60493",
+         "predicate":"http://rdaregistry.info/Elements/u/P60493",
          "field":"title_part_str",
          "required":"optional",
          "fallback":{
@@ -54,7 +54,7 @@
       {
          "name":"Paralleltitel",
          "source":"dict",
-         "graph":"http://purl.org/dc/terms/alternative",
+         "predicate":"http://purl.org/dc/terms/alternative",
          "field":"title_alt",
          "required":"optional",
          "fallback":{
@@ -73,7 +73,7 @@
       {
          "name":"Geistige Schöpfer",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/creator",
+         "predicate":"http://purl.org/dc/terms/creator",
          "field":"100:0",
          "required":"optional",
          "if_value":[
@@ -111,7 +111,7 @@
       {
          "name":"Geistige Schöpfer",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/creator",
+         "predicate":"http://purl.org/dc/terms/creator",
          "field":"110:0",
          "required":"optional",
          "if_value":[
@@ -149,7 +149,7 @@
       {
          "name":"Geistige Schöpfer",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/creator",
+         "predicate":"http://purl.org/dc/terms/creator",
          "field":"700:0",
          "required":"optional",
          "if_value":[
@@ -187,7 +187,7 @@
       {
          "name":"Geistige Schöpfer",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/creator",
+         "predicate":"http://purl.org/dc/terms/creator",
          "field":"710:0",
          "required":"optional",
          "if_value":[
@@ -225,7 +225,7 @@
       {
          "name":"Beteiligte",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/contributor",
+         "predicate":"http://purl.org/dc/terms/contributor",
          "field":"100:0",
          "required":"optional",
          "comment":"TODO:Liste einfügen",
@@ -264,7 +264,7 @@
       {
          "name":"Beteiligte",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/contributor",
+         "predicate":"http://purl.org/dc/terms/contributor",
          "field":"700:0",
          "required":"optional",
          "if_value":[
@@ -302,7 +302,7 @@
       {
          "name":"Beteiligte",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/contributor",
+         "predicate":"http://purl.org/dc/terms/contributor",
          "field":"110:0",
          "required":"optional",
          "if_value":[
@@ -340,7 +340,7 @@
       {
          "name":"Beteiligte",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/contributor",
+         "predicate":"http://purl.org/dc/terms/contributor",
          "field":"710:0",
          "required":"optional",
          "if_value":[
@@ -379,7 +379,7 @@
          "name":"Beteiligte, spezifische Funktion",
          "comment":"Verfasserrolle, nicht immer vergeben, kann aber auch mehrfach vergeben sein",
          "source":"marc",
-         "graph":"https://id.loc.gov/vocabulary/relators/html",
+         "predicate":"https://id.loc.gov/vocabulary/relators/html",
          "required":"optional",
          "mapping_settings":{
             "$ref":"./translation_maps/roles.json",
@@ -395,7 +395,7 @@
       {
          "name":"Erscheinungsvermerk",
          "source":"dict",
-         "graph":"http://rdaregistry.info/Elements/u/P60333",
+         "predicate":"http://rdaregistry.info/Elements/u/P60333",
          "field":"imprint_str_mv",
          "required":"optional",
          "comment":"ohne fallback; kommt aus Marc 260abc:264abc (und 533) mit ISBD-Formatierung"
@@ -403,7 +403,7 @@
       {
          "name":"Erscheinungssort",
          "source":"dict",
-         "graph":"http://rdaregistry.info/Elements/u/P60163",
+         "predicate":"http://rdaregistry.info/Elements/u/P60163",
          "field":"publishPlace",
          "required":"optional",
          "fallback":{
@@ -418,7 +418,7 @@
       {
          "name":"Verlag",
          "source":"dict",
-         "graph":"http://purl.org/dc/terms/publisher",
+         "predicate":"http://purl.org/dc/terms/publisher",
          "field":"publisher",
          "required":"optional",
          "fallback":{
@@ -433,7 +433,7 @@
       {
          "name":"Erscheinungsjahr",
          "source":"dict",
-         "graph":"http://purl.org/dc/terms/issued",
+         "predicate":"http://purl.org/dc/terms/issued",
          "field":"publishDateSort",
          "alternatives":[
             "publishDate"
@@ -452,7 +452,7 @@
       {
          "name":"Hochschulschriftenvermerk",
          "source":"marc",
-         "graph":"http://rdaregistry.info/Elements/u/P60489",
+         "predicate":"http://rdaregistry.info/Elements/u/P60489",
          "field":"502:a",
          "required":"optional",
          "comment":"Solr-Feld dissertation_note wird inzwischen nicht mehr befüllt, daher kein fallback mehr"
@@ -460,7 +460,7 @@
       {
          "name":"ISSN",
          "source":"marc",
-         "graph":"https://schema.org/issn",
+         "predicate":"https://schema.org/issn",
          "field":"022:a",
          "required":"optional",
          "comment":"abweichend von DINI-KIM-Empfehlung schema.org statt bibo",
@@ -472,7 +472,7 @@
       {
          "name":"ISBN",
          "source":"marc",
-         "graph":"http://schema.org/isbn",
+         "predicate":"http://schema.org/isbn",
          "field":"020:a",
          "required":"optional",
          "comment":"abweichend von DINI-KIM-Empfehlung schema.org statt bibo",
@@ -484,7 +484,7 @@
       {
          "name":"ZDB-ID",
          "source":"dict",
-         "graph":"http://purl.org/lobid/lv#zdbID",
+         "predicate":"http://purl.org/lobid/lv#zdbID",
          "field":"zdb",
          "required":"optional",
          "comment":"als fallback wäre 016a (wenn $2 DE-600) möglich, aber überflüssig"
@@ -492,7 +492,7 @@
       {
          "name":"URN",
          "source":"dict",
-         "graph":"https://schema.org/sameAs",
+         "predicate":"https://schema.org/sameAs",
          "field":"url",
          "required":"optional",
          "comment":"evtl. marc als Quelle und dict als fallback, das wäre genauer; für AI aber Solr relevant",
@@ -508,7 +508,7 @@
       {
          "name":"Inhaltstyp",
          "source":"marc",
-         "graph":"http://www.rdaregistry.info/Elements/u/#P60049",
+         "predicate":"http://www.rdaregistry.info/Elements/u/#P60049",
          "field":"336:a",
          "type":"triple",
          "required":"optional",
@@ -541,7 +541,7 @@
       {
          "name":"Medientyp",
          "source":"marc",
-         "graph":"http://www.rdaregistry.info/Elements/u/#P60050",
+         "predicate":"http://www.rdaregistry.info/Elements/u/#P60050",
          "field":"337:a",
          "type":"triple",
          "required":"optional",
@@ -559,7 +559,7 @@
       {
          "name":"Datenträgertyp",
          "source":"marc",
-         "graph":"http://www.rdaregistry.info/Elements/u/#P60048",
+         "predicate":"http://www.rdaregistry.info/Elements/u/#P60048",
          "field":"338:a",
          "required":"optional",
          "comment":"evtl. weniger wichtig?",
@@ -618,7 +618,7 @@
       {
          "name":"Übergeordneter Titel",
          "source":"dict",
-         "graph":"http://purl.org/dc/terms/isPartOf",
+         "predicate":"http://purl.org/dc/terms/isPartOf",
          "field":"hierarchy_parent_id",
          "type": "triple",
          "prepend":"https://data.finc.info/resources/",
@@ -627,7 +627,7 @@
       {
          "name":"Parallele Ausgabe (andere Sprache)",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/hasVersion",
+         "predicate":"http://purl.org/dc/terms/hasVersion",
          "field":"775:w",
          "required":"optional",
          "type":"triple",
@@ -638,7 +638,7 @@
       {
          "name":"Parallele Ausgabe (physisch anders)",
          "source":"marc",
-         "graph":"http://purl.org/dc/terms/hasVersion",
+         "predicate":"http://purl.org/dc/terms/hasVersion",
          "field":"776:w",
          "required":"optional",
          "type":"triple",
@@ -649,7 +649,7 @@
       {
          "name":"Vorgänger (Periodika)",
          "source":"marc",
-         "graph":"http://www.rdaregistry.info/Elements/u/#P60261",
+         "predicate":"http://www.rdaregistry.info/Elements/u/#P60261",
          "field":"780:w",
          "required":"optional",
          "type":"triple",
@@ -661,7 +661,7 @@
       {
          "name":"Nachfolger (Periodika)",
          "source":"marc",
-         "graph":"http://www.rdaregistry.info/Elements/u/#P60278",
+         "predicate":"http://www.rdaregistry.info/Elements/u/#P60278",
          "field":"785:w",
          "required":"optional",
          "type":"triple",
@@ -673,7 +673,7 @@
       {
          "name":"Sprache",
          "source":"dict",
-         "graph":"http://purl.org/dc/terms/language",
+         "predicate":"http://purl.org/dc/terms/language",
          "required":"optional",
          "field":"language",
          "type":"triple",
@@ -690,7 +690,7 @@
       {
          "name":"Umfang",
          "source":"dict",
-         "graph":"https://schema.org/numberOfPages",
+         "predicate":"https://schema.org/numberOfPages",
          "field":"physical",
          "required":"optional",
          "comment":"DINI-KIM-Vorschlag http://iflastandards.info/ns/isbd/elements/P1053 scheint unpassend; schema.org aber eigentlich nur für Book; evtl. http://purl.org/dc/terms/extent ? lobid nutzt http://id.loc.gov/ontologies/bibframe/extent",
@@ -702,7 +702,7 @@
       {
          "name":"Ausgabe (Auflage)",
          "source":"dict",
-         "graph":"https://schema.org/bookEdition",
+         "predicate":"https://schema.org/bookEdition",
          "field":"edition",
          "required":"optional",
          "fallback":{
@@ -713,7 +713,7 @@
       {
          "name":"Genre",
          "source":"dict",
-         "graph":"http://rdaregistry.info/Elements/u/P60584",
+         "predicate":"http://rdaregistry.info/Elements/u/P60584",
          "field":"genre_facet",
          "required":"optional",
          "comment":"nature of content",
@@ -728,7 +728,7 @@
          "comment1":"Die Frage besteht ob man 'field' mitnimmt oder es rein auf InsertFields beschränkt",
          "comment2":"What if any of those fields is a multivalued field?",
          "source":"dict",
-         "graph":"http://schema.org/availability",
+         "predicate":"http://schema.org/availability",
          "required":"optional",
          "field":"institution",
          "insert_into":"https://data.finc.info/holdings/{}:ppn:{}",
