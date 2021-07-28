@@ -1,1 +1,0 @@
-/home/jpk/PycharmProjects/EFRE2-LOD2/SPCHT.md
