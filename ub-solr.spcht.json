@@ -30,7 +30,7 @@
             "predicate": "http://www.w3.org/1999/02/22-rdf-syntax-ns#type",
             "field": "format_finc",
             "required": "optional",
-            "type": "triple",
+            "type": "uri",
             "mapping_settings": {
                 "$default": "http://purl.org/ontology/bibo/Document",
                 "$ref": "./translation_maps/documents.json"
@@ -103,7 +103,7 @@
          ],
          "if_condition":"=",
          "if_field":"100:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -141,7 +141,7 @@
          ],
          "if_condition":"=",
          "if_field":"110:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -179,7 +179,7 @@
          ],
          "if_condition":"=",
          "if_field":"700:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -217,7 +217,7 @@
          ],
          "if_condition":"=",
          "if_field":"710:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -256,7 +256,7 @@
          ],
          "if_condition":"!=",
          "if_field":"100:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -294,7 +294,7 @@
          ],
          "if_condition":"!=",
          "if_field":"700:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -332,7 +332,7 @@
          ],
          "if_condition":"!=",
          "if_field":"110:4",
-         "type":"triple",
+         "type": "uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -370,7 +370,7 @@
          ],
          "if_condition":"!=",
          "if_field":"710:4",
-         "type":"triple",
+         "type":"uri",
          "prepend":"http://d-nb.info/gnd/",
          "match":"(\\(DE-588\\))[0-9]*",
          "cut":"(\\(DE-588\\))"
@@ -510,7 +510,7 @@
          "source":"marc",
          "predicate":"http://www.rdaregistry.info/Elements/u/#P60049",
          "field":"336:a",
-         "type":"triple",
+         "type":"uri",
          "required":"optional",
          "mapping":{
             "aufgeführte Musik":"http://rdaregistry.info/termList/RDAContentType/1011",
@@ -543,7 +543,7 @@
          "source":"marc",
          "predicate":"http://www.rdaregistry.info/Elements/u/#P60050",
          "field":"337:a",
-         "type":"triple",
+         "type":"uri",
          "required":"optional",
          "mapping":{
             "audio":"http://rdaregistry.info/termList/RDAMediaType/1001",
@@ -563,7 +563,7 @@
          "field":"338:a",
          "required":"optional",
          "comment":"evtl. weniger wichtig?",
-         "type":"triple",
+         "type":"uri",
          "mapping":{
             "Audiocartridge":"http://www.rdaregistry.info/termList/RDACarrierType/#1002",
             "Audio Belt":"http://www.rdaregistry.info/termList/RDACarrierType/#1070",
@@ -620,7 +620,7 @@
          "source":"dict",
          "predicate":"http://purl.org/dc/terms/isPartOf",
          "field":"hierarchy_parent_id",
-         "type": "triple",
+         "type": "uri",
          "prepend":"https://data.finc.info/resources/",
          "required":"optional"
       },
@@ -630,7 +630,7 @@
          "predicate":"http://purl.org/dc/terms/hasVersion",
          "field":"775:w",
          "required":"optional",
-         "type":"triple",
+         "type":"uri",
          "prepend":"https://data.finc.info/resources/0-",
          "match":"(\\(DE-627\\))[0-9]*",
          "cut":"(\\(DE-627\\))"
@@ -641,7 +641,7 @@
          "predicate":"http://purl.org/dc/terms/hasVersion",
          "field":"776:w",
          "required":"optional",
-         "type":"triple",
+         "type":"uri",
          "prepend":"https://data.finc.info/resources/0-",
          "match":"(\\(DE-627\\))[0-9]*",
          "cut":"(\\(DE-627\\))"
@@ -652,7 +652,7 @@
          "predicate":"http://www.rdaregistry.info/Elements/u/#P60261",
          "field":"780:w",
          "required":"optional",
-         "type":"triple",
+         "type":"uri",
          "comment":"es kommt häufig vor, dass Vorgänger/Nachfolger nicht im Index sind was passiert dann?",
          "prepend":"https://data.finc.info/resources/0-",
          "match":"(\\(DE-627\\))[0-9]*",
@@ -664,7 +664,7 @@
          "predicate":"http://www.rdaregistry.info/Elements/u/#P60278",
          "field":"785:w",
          "required":"optional",
-         "type":"triple",
+         "type":"uri",
          "comment":"es kommt häufig vor, dass Vorgänger/Nachfolger nicht im Index sind, was dann?",
          "prepend":"https://data.finc.info/resources/0-",
          "match":"(\\(DE-627\\))[0-9]*",
@@ -676,7 +676,7 @@
          "predicate":"http://purl.org/dc/terms/language",
          "required":"optional",
          "field":"language",
-         "type":"triple",
+         "type":"uri",
          "mapping_settings":{
             "$ref":"./translation_maps/languages_long.json"
          },
@@ -735,7 +735,7 @@
          "insert_add_fields":[
             "swb_id_str"
          ],
-         "type":"triple",
+         "type":"uri",
          "match":"^DE-15$"
       }
    ]
