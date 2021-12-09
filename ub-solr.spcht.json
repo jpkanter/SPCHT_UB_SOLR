@@ -20,7 +20,9 @@
             "field":"245:a",
             "insert_into":"{} : {}",
             "insert_add_fields":[
-               "245:b"
+               {
+                  "field": "245:b"
+               }
             ]
          }
       },
@@ -47,7 +49,9 @@
             "field":"245:n",
             "insert_into":"{}, {}",
             "insert_add_fields":[
-               "245:p"
+               {
+                  "field": "245:p"
+               }
             ]
          }
       },
@@ -731,9 +735,9 @@
          "predicate":"http://schema.org/availability",
          "required":"optional",
          "field":"institution",
-         "insert_into":"https://data.finc.info/holdings/{}:ppn:{}",
+         "insert_into":"https://data.ub.uni-leipzig.de/item/wachtl/{}:ppn:{}",
          "insert_add_fields":[
-            "swb_id_str"
+            { "field": "swb_id_str" }
          ],
          "type":"uri",
          "match":"^DE-15$"
